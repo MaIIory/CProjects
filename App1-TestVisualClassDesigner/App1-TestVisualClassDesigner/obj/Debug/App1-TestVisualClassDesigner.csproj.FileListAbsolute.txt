@@ -1,0 +1,6 @@
+F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.exe.config
+F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.csprojResolveAssemblyReference.cache
+F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.exe
+F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.pdb
+F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.exe
+F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.pdb
