@@ -1,0 +1,1 @@
+﻿The application presents basic usage of command line arguments and example of some useful methods from System.Environment namespace.

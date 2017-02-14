@@ -4,3 +4,9 @@ F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug
 F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.pdb
 F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.exe
 F:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.pdb
+C:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.exe.config
+C:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.exe
+C:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.pdb
+C:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.exe
+C:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\bin\Debug\App1-TestVisualClassDesigner.pdb
+C:\CProjects\App1-TestVisualClassDesigner\App1-TestVisualClassDesigner\obj\Debug\App1-TestVisualClassDesigner.csprojResolveAssemblyReference.cache
