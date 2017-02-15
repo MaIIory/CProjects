@@ -1,0 +1,1 @@
+﻿The aplication presents basic usage of Console type methods set and how to create windows message box

@@ -38,6 +38,8 @@ namespace App2_SimpleCSharpApp
             foreach (string disk in Environment.GetLogicalDrives())
                 Console.Write("{0} ", disk);
             Console.Write("\n");
+
+            Console.WriteLine("System directory: {0}", Environment.SystemDirectory);
         }
     }
 }
