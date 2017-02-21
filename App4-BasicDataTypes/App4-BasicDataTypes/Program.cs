@@ -14,6 +14,9 @@ namespace App4_BasicDataTypes
             NewingDataTypes();
             ObjectFuncionality();
             DataTypeFunctionality();
+            CharFuncionality();
+            ParseFromString();
+            UseDataAndTimes();
             Console.ReadLine();
         }
 
@@ -65,6 +68,51 @@ namespace App4_BasicDataTypes
             Console.WriteLine("double.PositiveInfinity: {0}",double.PositiveInfinity);
             Console.WriteLine("double.NegativeInfinity: {0}",double.NegativeInfinity);
             Console.WriteLine("double.Epsilon: {0}", double.Epsilon);
+        }
+
+        static void CharFuncionality()
+        {
+            Console.WriteLine("=>char type Funcionality");
+            char myChar = 'a';
+            Console.WriteLine("char.IsDigit('a'): {0}", char.IsDigit(myChar));
+            Console.WriteLine("char.IsLetter('a'): {0} ", char.IsLetter(myChar));
+            Console.WriteLine("char.IsWhiteSpace('Hello There', 5): {0}", char.IsWhiteSpace("Hello There", 5));
+            Console.WriteLine("char.IsPunctuation('?'): {0}", char.IsPunctuation('?'));
+        }
+
+        static void ParseFromString()
+        {
+            Console.WriteLine("\n=> Data type parsing");
+            bool b = bool.Parse("True");
+            Console.WriteLine("Value of b: {0}", b);
+            double d = double.Parse("99,870");
+            Console.WriteLine("Value of d: {0}", d);
+            int i = int.Parse("8");
+            Console.WriteLine("Value of i: {0}", i);
+            char c = char.Parse("w");
+            Console.WriteLine("Value of c: {0}", c);
+        }
+
+        static void UseDataAndTimes()
+        {
+            Console.WriteLine("\n=> Dates and Times");
+
+            Console.WriteLine("Today's date is {0}",DateTime.Now);
+            DateTime dt = new DateTime(2015, 10, 17); //year, month, day
+            Console.WriteLine("The day of {0} is {1}", dt.ToShortDateString(), dt.DayOfWeek);
+
+            dt.AddMonths(2);
+            Console.WriteLine("Daylight saving: {0}", dt.IsDaylightSavingTime());
+
+            TimeSpan ts = new TimeSpan(4, 50, 0); //hours, minutes, seconds
+            Console.WriteLine(ts);
+
+            ts = ts.Subtract(new TimeSpan(0,15,0));
+            Console.WriteLine(ts);
+
+
+           
+            
         }
     }
 }
