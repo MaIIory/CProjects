@@ -27,6 +27,10 @@ namespace App13_Encapsulation
 
             newEmp.DisplayStatus();
 
+            Employee newEmp2 = new Employee();
+
+            newEmp2.DisplayStatus();
+
             Console.ReadLine();
         }
     }

@@ -12,10 +12,19 @@ namespace App13_Encapsulation
         private int empId;
         private float currPay;
 
-        public Employee() { }
+        //autoamtic properties (fields are internally private, but they are not visible)
+        public string Nickname { get; set; }
+        public string Password { set { Console.WriteLine("Password set"); } }
+        public int Age { get; set; }
+
+        public Computer Hardware { get; set; }
+        public Computer EmergencyHardware { get; set; } = new Computer();
+
+        public Employee() : this("",0,0) { }
 
         public Employee(string name, int id, float pay)
         {
+            Hardware = new Computer();
             empName = name;
             empId = id;
             currPay = pay;
@@ -78,6 +87,9 @@ namespace App13_Encapsulation
             Console.WriteLine("Employee name: {0}", empName);
             Console.WriteLine("Employee id:   {0}", empId);
             Console.WriteLine("Employee salary: {0}", currPay);
+            Console.WriteLine("Employee's nickname: {0}", Nickname);
+            Console.WriteLine("Emplyeee's age: {0}", Age);
+            Console.WriteLine("Employee's hardware: {0}", Hardware.ToString());
         }
     }
 }
