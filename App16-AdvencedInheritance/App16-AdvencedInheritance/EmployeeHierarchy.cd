@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="App16_AdvencedInheritance.Employee">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAADAAAAAAAAAgAAIECIAAAAAAAAAAAyAAAAQQAABQA=</HashCode>
+      <FileName>Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App16_AdvencedInheritance.Manager">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App16_AdvencedInheritance.SalesPerson">
+    <Position X="8.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>SalesPerson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
