@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace App18_SimpleException
 {
+    //The exception created with 'exception' snippet
     [Serializable]
     public class CarExplodedException : Exception
     {

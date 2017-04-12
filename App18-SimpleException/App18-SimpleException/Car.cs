@@ -17,13 +17,23 @@ namespace App18_SimpleException
             currentSpeed += speed;
             Console.WriteLine("Accelerating to {0}",currentSpeed);
 
+            if(speed <= 0)
+            {
+                //create and throw default exception
+                Exception speedIsTooLowException = new Exception("Speed must be greaten than 0");
+                throw speedIsTooLowException;
+
+            }
+
             if(currentSpeed > maxSpeed)
             {
-                //In case max speed is excedeed, throw new execption
+                //In case max speed is excedeed, throw new exception
                 currentSpeed = 0;
                 isDead = true;
                 string exceptionMsg = "The car has just blown up";
-                Exception carException = new Exception(exceptionMsg);
+
+                //Create and throw custom exception
+                CarExplodedException carException = new CarExplodedException(exceptionMsg);
                 carException.Data.Add(0, "Car has been damaged permanently");
 
                 throw carException;
