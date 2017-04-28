@@ -100,6 +100,46 @@ namespace App21_GenericCollections
                 Console.WriteLine(empQueue.Dequeue().ToString());
             }
 
+            //=========================================================
+            //==========      Working with SortedSet<T>   =============
+            //=========================================================
+
+            SortedSet<Employee> empSS = new SortedSet<Employee>(new EmployeeComparer())
+            {
+                new Employee("Lukasz",0,1500) { Nickname = "Lucyn" },
+                new Employee("Marcin",1,2500),
+                new Employee("Daniel",2,1250)
+            };
+
+            foreach(Employee emp in empSS)
+                Console.WriteLine(emp.ToString());
+
+
+            //=========================================================
+            //=========      Working with Dictionary<T>   =============
+            //=========================================================
+
+            Dictionary<int, Employee> empDic = new Dictionary<int, Employee>
+            {
+                {0, new Employee("Lukasz",0,1500) { Nickname = "Lucyn" } },
+                {1,  new Employee("Marcin",1,2500) },
+                {3, new Employee("Daniel",3,1250) }
+            };
+
+            //RUNTIME EXCEPTION !! You can't add entry with existing key
+            //empDic.Add(3, new Employee("Kazek", 3, 1000));
+
+            Console.WriteLine(empDic[3]);
+
+            //Dictionary initialization
+            Dictionary<string, Employee> empDic2 = new Dictionary<string, Employee>
+            {
+                ["Lucyn"] = new Employee("Lukasz", 0, 1500),
+                ["Ptaku"] = new Employee("Marcin", 1, 2500),
+                ["Danio"] = new Employee("Daniel", 3, 1250)
+            };
+
+
             Console.ReadLine();
         }
     }

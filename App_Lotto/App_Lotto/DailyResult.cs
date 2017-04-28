@@ -8,5 +8,6 @@ namespace App_Lotto
 {
     class DailyResult
     {
+        private 
     }
 }
