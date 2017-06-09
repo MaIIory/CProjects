@@ -19,6 +19,11 @@ namespace App_Lotto
 
             Console.WriteLine($"I will look for most common sequence of {args[0]} numbers in Lotto history!");
 
+            //new aproach
+            //put resukt to dictionary {010323254577, DailtResult}
+            //and then just find top few resukt with most results
+
+
             //TODO Implement test timers that will be used
             //to measure performence of specific step 
 

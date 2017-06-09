@@ -15,7 +15,7 @@ namespace App21_GenericCollections
         {
             Console.WriteLine("Collection initialization syntax");
             //Collection initialization sytntax is applicable only to classes that 
-            //implements Add() method, i.e. implement ICollection<T> interface
+            //implements Add() method, i.e. implements ICollection<T> interface
 
 
             //init a standard array
@@ -111,9 +111,8 @@ namespace App21_GenericCollections
                 new Employee("Daniel",2,1250)
             };
 
-            foreach(Employee emp in empSS)
+            foreach (Employee emp in empSS)
                 Console.WriteLine(emp.ToString());
-
 
             //=========================================================
             //=========      Working with Dictionary<T>   =============
@@ -127,9 +126,30 @@ namespace App21_GenericCollections
             };
 
             //RUNTIME EXCEPTION !! You can't add entry with existing key
-            //empDic.Add(3, new Employee("Kazek", 3, 1000));
+            try
+            {
+                empDic.Add(3, new Employee("Kazek", 3, 1000));
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("It seems entry with that key already exists, here are details:");
+                Console.WriteLine("Exception type: {0}", e.GetType().ToString());
+                Console.WriteLine("Exception message: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception Catched!!!");
+                Console.WriteLine("Exception type: {0}", e.GetType().ToString());
+                Console.WriteLine("Exception message: " + e.Message);
+            }
 
-            Console.WriteLine(empDic[3]);
+            Employee tempEmp = empDic[3];
+            tempEmp.Pay += 200;
+
+            Console.WriteLine("Daniel's salary is now: {0}", empDic[3].Pay);
+
+            foreach (KeyValuePair<int, Employee> emp in empDic)
+                Console.WriteLine("Key: {0}, Value: {1}", emp.Key, emp.Value);
 
             //Dictionary initialization
             Dictionary<string, Employee> empDic2 = new Dictionary<string, Employee>
@@ -138,6 +158,13 @@ namespace App21_GenericCollections
                 ["Ptaku"] = new Employee("Marcin", 1, 2500),
                 ["Danio"] = new Employee("Daniel", 3, 1250)
             };
+
+            foreach (KeyValuePair<string, Employee> emp in empDic2)
+                Console.WriteLine("Key: {0}, Value: {1}", emp.Key, emp.Value);
+
+            //=========================================================
+            //========= Working with SortedDictionary<T>   ============
+            //=========================================================
 
 
             Console.ReadLine();
