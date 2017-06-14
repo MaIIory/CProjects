@@ -42,7 +42,19 @@ namespace App22_Delegates
             //#2 Example
             BinaryOp c = new BinaryOp(sm.Substract);
 
+
+            Type myType = c.GetType();
+
+            if(myType != null)
+                Console.WriteLine("Type name: " + myType.ToString());
+            else
+                Console.WriteLine("myType is null");
+
+
             Console.WriteLine("c(20,10): {0}",c(20,10));
+            Console.WriteLine("c.GetType(): {0}",c.GetType().BaseType);
+
+            c.Invoke(30, 40);
 
 
             Console.ReadLine();

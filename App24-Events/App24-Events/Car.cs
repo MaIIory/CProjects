@@ -4,11 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App23_AdvancedDelegates
+namespace App24_Events
 {
-    //Definition of delegate type
-    //The delegate may point to any method taking a single string as an input and void as a return value
-    delegate void CarEngineHandler(string msgForCaller);
 
     class Car
     {
@@ -16,11 +13,15 @@ namespace App23_AdvancedDelegates
         public int MaxSpeed { get; set; } = 100;
         public string PetName { get; set; }
 
-        //Optionally, delegate definition may associated with the class
-        //public delegate void CarEngineHandler(string msgForCaller);
+        //delegate definition may associated with the class
+        public delegate void CarEngineHandler(string msg);
+
+        //The car can send these events
+        public event CarEngineHandler Exploded;
+        public event CarEngineHandler AboutToBlow;
 
         //Member variable of the delegate - it holds delegate list of handlers - it's type is MultiCastDelegate
-        private CarEngineHandler listOfHandlers;
+        //private CarEngineHandler listOfHandlers;
 
         private bool carIsDead = false;
 
@@ -34,6 +35,7 @@ namespace App23_AdvancedDelegates
         }
 
         //Registration function for the caller
+        /*
         public void RegisterWithCarEngine(CarEngineHandler methodToCall)
         {
             if (listOfHandlers == null)
@@ -41,6 +43,7 @@ namespace App23_AdvancedDelegates
             else
                 listOfHandlers += methodToCall;
         }
+        */
 
         //Method to invoke the delegate's invocation list under the correct circumstaces
         public void Accelerate(int delta)
@@ -48,7 +51,7 @@ namespace App23_AdvancedDelegates
 
             if(carIsDead)
             {
-                listOfHandlers?.Invoke("Sorry, car is dead");
+                Exploded?.Invoke("Sorry, car is dead");
             }
             else
             {
@@ -56,15 +59,14 @@ namespace App23_AdvancedDelegates
 
                 if (MaxSpeed - CurrentSpeed <= 0)
                 {
-                    listOfHandlers?.Invoke("Ok, I am done :(");
                     carIsDead = true;
                 }
                 else if (MaxSpeed - CurrentSpeed <= 10)
-                    listOfHandlers?.Invoke("Engine is about to blow");
+                    AboutToBlow?.Invoke("I am going to blow!");
                 else
                 {
                     string msg = "OK, current speed is " + CurrentSpeed.ToString();
-                    listOfHandlers?.Invoke(msg);
+                    Console.WriteLine(msg);
                 }
             }
         }

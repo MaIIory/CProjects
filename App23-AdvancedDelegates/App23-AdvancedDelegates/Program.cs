@@ -23,8 +23,6 @@ namespace App23_AdvancedDelegates
             // ==
             CarEngineHandler myCarDelegate2 = OnCarEngineEvent;
 
-            
-
             for (int i = 0; i < 10; i++)
                 myCar.Accelerate(20);
 
