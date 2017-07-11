@@ -4,8 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App24_Events
+namespace App26_AdvancedLambdas
 {
+    //class to store custom data
+    //numbers of base class libraries use two arguments in delegates definitions:
+    //painter to the caller and custom class with arguments, that inherits from EventArgs
+    public class CarEventArgs : EventArgs
+    {
+        public readonly string msg;
+        public CarEventArgs(string message) { msg = message; }
+    }
 
     class Car
     {
@@ -14,15 +22,11 @@ namespace App24_Events
         public string PetName { get; set; }
 
         //delegate definition may be associated with the class
-        public delegate void CarEngineHandler(string msg);
+        public delegate void CarEngineHandler(object sender, CarEventArgs e);
 
         //The car can send these events
         public event CarEngineHandler Exploded;
         public event CarEngineHandler AboutToBlow;
-
-
-        //Member variable of the delegate - it holds delegate list of handlers - it's type is MultiCastDelegate
-        //private CarEngineHandler listOfHandlers;
 
         private bool carIsDead = false;
 
@@ -35,25 +39,13 @@ namespace App24_Events
             PetName = name;
         }
 
-        //This method is not needed due to event mechanism
-        //Registration function for the caller
-        /*
-        public void RegisterWithCarEngine(CarEngineHandler methodToCall)
-        {
-            if (listOfHandlers == null)
-                listOfHandlers = methodToCall;
-            else
-                listOfHandlers += methodToCall;
-        }
-        */
-
         //Method to invoke the delegate's invocation list under the correct circumstaces
         public void Accelerate(int delta)
         {
 
             if(carIsDead)
             {
-                Exploded?.Invoke("Sorry, car is dead");
+                Exploded?.Invoke(this, new CarEventArgs("Sorry, car is dead"));
             }
             else
             {
@@ -64,7 +56,7 @@ namespace App24_Events
                     carIsDead = true;
                 }
                 else if (MaxSpeed - CurrentSpeed <= 10)
-                    AboutToBlow?.Invoke("I am going to blow!");
+                    AboutToBlow?.Invoke(this, new CarEventArgs("I am going to blow!"));
                 else
                 {
                     string msg = "OK, current speed is " + CurrentSpeed.ToString();

@@ -34,6 +34,9 @@ namespace App23_AdvancedDelegates
         }
 
         //Registration function for the caller
+        //Note: We keep delegete member private and we have encapsulated method to 
+        //register methods to avoid external manipulation of delegate member.
+        //If it would be public the list of the method could be easily changed
         public void RegisterWithCarEngine(CarEngineHandler methodToCall)
         {
             if (listOfHandlers == null)
