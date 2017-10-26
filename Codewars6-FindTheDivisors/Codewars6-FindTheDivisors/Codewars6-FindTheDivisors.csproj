@@ -4,7 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+<<<<<<< HEAD
     <ProjectGuid>{71790D3A-2F39-4689-A705-167DCE7A27D4}</ProjectGuid>
+=======
+    <ProjectGuid>{9C91D835-78AF-441C-930C-C541CD77507B}</ProjectGuid>
+>>>>>>> Add SimpleDatabase app
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Codewars6_FindTheDivisors</RootNamespace>

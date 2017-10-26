@@ -5,18 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Codewars6-FindTheDivisors")]
+[assembly: AssemblyTitle("App_SimpleDatabase")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-<<<<<<< HEAD
-[assembly: AssemblyCompany("Ericsson")]
-[assembly: AssemblyProduct("Codewars6-FindTheDivisors")]
-[assembly: AssemblyCopyright("Copyright © Ericsson 2017")]
-=======
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Codewars6-FindTheDivisors")]
+[assembly: AssemblyProduct("App_SimpleDatabase")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
->>>>>>> Add SimpleDatabase app
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -26,11 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-<<<<<<< HEAD
-[assembly: Guid("71790d3a-2f39-4689-a705-167dce7a27d4")]
-=======
-[assembly: Guid("9c91d835-78af-441c-930c-c541cd77507b")]
->>>>>>> Add SimpleDatabase app
+[assembly: Guid("82e03e29-761e-4bc8-a0c9-59e912cf5f4f")]
 
 // Version information for an assembly consists of the following four values:
 //
