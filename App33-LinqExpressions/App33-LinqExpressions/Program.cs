@@ -30,6 +30,12 @@ namespace App33_LinqExpressions
                 Console.WriteLine(r.ToString());
 
             GetNumberOfOverstockedProducts(itemsInStock);
+            GetProductsInAscendingOrder(itemsInStock);
+
+            String[] CarSet1 = { "Audi", "Bmw", "Ford" };
+            String[] CarSet2 = { "Bmw", "Opel", "Fiat" };
+
+            ShowDifferences(CarSet1, CarSet2);
 
             Console.ReadLine();
         }
@@ -37,7 +43,11 @@ namespace App33_LinqExpressions
         static void GetEverything(ProductInfo [] products)
         {
             Console.WriteLine("\n**** GetEverything ****");
+
             var allProducts = from p in products select p;
+
+            //alternative
+            //var allProducts = products.Select(i => i);
 
             foreach(var p in allProducts)
                 Console.WriteLine(p.ToString());
@@ -48,6 +58,9 @@ namespace App33_LinqExpressions
             Console.WriteLine("\n**** GetProductNamesOnly ****");
             var productNames = from p in products select p.Name;
 
+            //alternative
+            //var productNames2 = products.Select(i => i.Name);
+
             foreach(var p in productNames)
                 Console.WriteLine(p.ToString());
         }
@@ -56,9 +69,12 @@ namespace App33_LinqExpressions
         {
             Console.WriteLine("\n**** GetOverstock ****");
             var overstock = from product in products where product.NumberInStock > 25 select product.Name + ' ' + product.NumberInStock;
-            
+
+            //alternative
+            //var overstock = products.Where(i => i.NumberInStock > 25).Select(i => i.Name + ' ' + i.NumberInStock);
+
             foreach(var p in overstock)
-                Console.WriteLine(p.ToString()); 
+                Console.WriteLine(p.ToString());
         }
 
         static void GetNamesAndDescritpions(ProductInfo [] products)
@@ -90,6 +106,34 @@ namespace App33_LinqExpressions
             int nb = (from p in products where p.NumberInStock > 25 select p).Count();
 
             Console.WriteLine("Number of overstocked products is : {0}",nb);
+        }
+
+        static void GetProductsInAscendingOrder(ProductInfo [] products)
+        {
+            Console.WriteLine("\n**** GetProductsInAscendingOrder ****");
+
+            var orderedProducts = from p in products orderby p.Name select p; 
+
+            //alternative
+           //var orderedProducts = products.OrderBy(i => i.Name);
+
+            foreach (var p in orderedProducts)
+                Console.WriteLine(p.ToString());
+        }
+
+        static void ShowDifferences(String [] set1, String [] set2)
+        {
+            Console.WriteLine("\n**** ShowDifferences ****");
+
+            var diff = set1.Select(i => i).Except(set2.Select(i => i));
+
+            foreach (var item in diff)
+                Console.WriteLine(item.ToString());
+
+            //You can use Intersect() for common data
+            //You can use Union() to compose set containing both sets (no repeating values)
+            //You can use Concat() to compose common set (with repeating values)
+            //You can use Distinc() to remove duplicates from set
         }
 
 
