@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Codewars6-FindTheDivisors")]
+[assembly: AssemblyTitle("Codewars8-SortTheOdd")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Codewars6-FindTheDivisors")]
+[assembly: AssemblyProduct("Codewars8-SortTheOdd")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("137bf880-ef82-459d-b91e-634b975a55c3")]
+[assembly: Guid("1dc8a7aa-7678-415d-8cb1-cb18961c9852")]
 
 // Version information for an assembly consists of the following four values:
 //
