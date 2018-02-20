@@ -19,7 +19,7 @@ namespace App24_Events
 
             myCar.Exploded += MyCar_Exploded;
 
-            //Example of anonymous function
+            //Example of anonymous methods
             myCar.Exploded += delegate (string msg) { Console.WriteLine("I Exploded : {0}",msg); };
             myCar.Exploded += delegate { Console.WriteLine("I am dead"); };
 
