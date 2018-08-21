@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_LocalDatabase.MyLocalDatabaseDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace App_LocalDatabase
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsersTableAdapter usersAdapter = new UsersTableAdapter();
+            
+            //usersAdapter.Fill(new MyLocalDatabaseDataSet().Users);
+
+            MyLocalDatabaseDataSet.UsersDataTable users = usersAdapter.GetData();
+            
+            Console.Write(users.FindById(0).Name);
         }
     }
 }
