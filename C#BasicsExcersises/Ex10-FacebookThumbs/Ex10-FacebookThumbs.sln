@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex10-FacebookThumbs", "Ex10-FacebookThumbs\Ex10-FacebookThumbs.csproj", "{FEEE8F3F-FCB4-4EE4-8472-DC59D77937AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEE8F3F-FCB4-4EE4-8472-DC59D77937AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEE8F3F-FCB4-4EE4-8472-DC59D77937AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEE8F3F-FCB4-4EE4-8472-DC59D77937AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEE8F3F-FCB4-4EE4-8472-DC59D77937AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04532B93-D940-43F7-9A96-5E516B947A2F}
+	EndGlobalSection
+EndGlobal

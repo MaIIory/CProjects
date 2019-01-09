@@ -1,0 +1,4 @@
+﻿Hello,
+This is content of input file that will be loaded to the application.
+Number of words used in this file should be counted and printed.
+Thank you!

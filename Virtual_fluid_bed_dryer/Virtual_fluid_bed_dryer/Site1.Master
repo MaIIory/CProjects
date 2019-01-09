@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Virtual_fluid_bed_dryer.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="~/StyleSheet1.css" type="text/css" runat="server" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="master_body">
+    <header>
+        <p class="ThreeDsmall"> Virtual Fluid <br />Bed Dryer</p>
+
+    </header>
+    <form id="form1" runat="server">
+    <nav>
+        <asp:Label ID="lblExpNb" runat="server" Visible="False"></asp:Label>
+        <span class="auto-style1">Logged as</span>
+        <asp:Label ID="lblLogin" runat="server"></asp:Label>
+        <span class="auto-style1">,&nbsp; <a href="Default.aspx">log out&nbsp;</a>&nbsp; </span></nav>
+    <aside>
+        <asp:Button ID="HomeButton" runat="server" Text="Home" CssClass="button3" OnClick="HomeButton_Click" CausesValidation="False"></asp:Button>
+        <asp:button ID="ExperimentsButton" runat ="server" Text="Perform Experiment" CssClass="button3" OnClick="ExperimentsButton_Click" CausesValidation="False"></asp:button>
+        <asp:Button class="btnArchivedResults" runat="server" Text="Archived Results" CssClass="button3" OnClick="Unnamed1_Click" CausesValidation="False"></asp:Button>
+        <asp:Button ID="btnEdit" class="" runat="server" Text="Edit Profile" CssClass="button3" CausesValidation="False" OnClick="btnEdit_Click"></asp:Button>
+
+        <asp:Button ID="tbnContact" runat="server" Text="Contact" CssClass="button3" OnClick="Button1_Click" CausesValidation="False" />
+ 
+
+
+    </aside>
+
+
+    <div class="ContentPlaceHolder1">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer>Footer</footer>
+    
+    </form>
+        
+</body>
+</html>

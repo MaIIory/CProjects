@@ -1,0 +1,4 @@
+﻿Here is the file with some words. You should go through Circumstances it and find longest word. 
+Verification
+Guidelines
+detailed

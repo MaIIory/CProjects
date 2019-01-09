@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="ExperimentResultDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ExperimentResult" Member="ExperimentResult">
+    <Type Name="ExperimentResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Start_humidity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mass" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Volume_flow_rate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Humidity_ratio" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Drying_temperature" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Desired_humidity_level" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Time_of_drying" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Particle_diameter" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Gas_type" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Start_gas_temperature" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Pressure" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Machine_heating_rate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Product_final_hum" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Product_fianl_mass" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Total_time" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Experiment_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="User_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
