@@ -22,9 +22,9 @@ namespace App20_IEnumerable
         }
 
 
-        //"Easiest" way to implement IEnumerable interface
+        //"Easiest" way to implement IEnumerable interface.
         //Except usage of foreach instruction you can also
-        //use IEnumerator methods
+        //use IEnumerator methods.
         public IEnumerator GetEnumerator()
         {
             return carSet.GetEnumerator();

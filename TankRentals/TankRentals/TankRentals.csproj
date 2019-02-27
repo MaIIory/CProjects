@@ -5,9 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190122145017_FixMembershipTypeId.cs" />
+    <Compile Remove="Migrations\20190122145017_FixMembershipTypeId.Designer.cs" />
+    <Compile Remove="Migrations\20190201112900_NullTankId.cs" />
+    <Compile Remove="Migrations\20190201112900_NullTankId.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="datatables.net" Version="1.10.18" />
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.10" />
   </ItemGroup>
 
 </Project>

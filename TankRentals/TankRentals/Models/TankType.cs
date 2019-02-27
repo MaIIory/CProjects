@@ -7,7 +7,7 @@ namespace TankRentals.Models
 {
     public class TankType
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TankRentals.Models;
 
 namespace TankRentals.Migrations
 {
     [DbContext(typeof(TanksContext))]
-    partial class TanksContextModelSnapshot : ModelSnapshot
+    [Migration("20190121215609_Add MemrhTp")]
+    partial class AddMemrhTp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,11 +27,11 @@ namespace TankRentals.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("BirthDate");
+                    b.Property<DateTime?>("BirthDate");
 
                     b.Property<bool>("IsSubscribedToNewsletter");
 
-                    b.Property<int>("MembershipTypeId");
+                    b.Property<int?>("MembershipTypeId1");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -37,7 +39,7 @@ namespace TankRentals.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MembershipTypeId");
+                    b.HasIndex("MembershipTypeId1");
 
                     b.ToTable("Customers");
                 });
@@ -69,17 +71,13 @@ namespace TankRentals.Migrations
 
                     b.Property<DateTime>("DateAdded");
 
-                    b.Property<int>("HorsePowers");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasMaxLength(15);
+                    b.Property<string>("Model");
 
                     b.Property<short>("NumberInGarage");
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<int>("TankTypeId");
+                    b.Property<byte?>("TankTypeId");
 
                     b.HasKey("Id");
 
@@ -90,9 +88,7 @@ namespace TankRentals.Migrations
 
             modelBuilder.Entity("TankRentals.Models.TankType", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<byte>("Id");
 
                     b.Property<string>("Name");
 
@@ -105,16 +101,14 @@ namespace TankRentals.Migrations
                 {
                     b.HasOne("TankRentals.Models.MembershipType", "MembershipType")
                         .WithMany()
-                        .HasForeignKey("MembershipTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("MembershipTypeId1");
                 });
 
             modelBuilder.Entity("TankRentals.Models.Tank", b =>
                 {
                     b.HasOne("TankRentals.Models.TankType", "TankType")
                         .WithMany()
-                        .HasForeignKey("TankTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TankTypeId");
                 });
 #pragma warning restore 612, 618
         }

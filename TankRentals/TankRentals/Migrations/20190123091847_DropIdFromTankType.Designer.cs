@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TankRentals.Models;
 
 namespace TankRentals.Migrations
 {
     [DbContext(typeof(TanksContext))]
-    partial class TanksContextModelSnapshot : ModelSnapshot
+    [Migration("20190123091847_DropIdFromTankType")]
+    partial class DropIdFromTankType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +27,7 @@ namespace TankRentals.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("BirthDate");
+                    b.Property<DateTime?>("BirthDate");
 
                     b.Property<bool>("IsSubscribedToNewsletter");
 
@@ -69,11 +71,7 @@ namespace TankRentals.Migrations
 
                     b.Property<DateTime>("DateAdded");
 
-                    b.Property<int>("HorsePowers");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasMaxLength(15);
+                    b.Property<string>("Model");
 
                     b.Property<short>("NumberInGarage");
 
@@ -90,13 +88,13 @@ namespace TankRentals.Migrations
 
             modelBuilder.Entity("TankRentals.Models.TankType", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TankTypeId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("Id");
+                    b.HasKey("TankTypeId");
 
                     b.ToTable("TankType");
                 });

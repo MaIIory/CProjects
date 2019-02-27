@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace TankRentals.Models
 {
-
-    public class Tank
+    public class TankDto
     {
         public int Id { get; set; }
 
@@ -15,22 +14,18 @@ namespace TankRentals.Models
         [MaxLength(15, ErrorMessage = "Max length is 15 characters")]
         public string Model { get; set; }
 
+        [Required]
+        [Display(Name = "Tank Type")]
+        public int TankTypeId { get; set; }
+
         public TankType TankType { get; set; }
 
         [Required]
-        [Display(Name="Tank Type")]
-        public int TankTypeId { get; set; }
-
-        [Required]
-        [Display(Name ="Release Date")]
+        [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        public DateTime DateAdded { get; set; }
-
         [Required]
-        [Display(Name ="Number in Garage")]
+        [Display(Name = "Number in Garage")]
         public short NumberInGarage { get; set; }
-
-        public int HorsePowers { get; set; }
     }
 }

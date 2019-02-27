@@ -1,0 +1,39 @@
+﻿@model TankRentals.ViewModels.NewCustomerViewModel
+
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Model.FormName</h2>
+
+@using (Html.BeginForm("Save", "Customers", new { @class = "form-horizontal" }))
+{
+
+    @Html.ValidationSummary();
+<div class="form-group">
+    @Html.LabelFor(m => m.Customer.Name, new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Customer.Name, "", new { style = "color:#e60000" })
+    <br />
+    @Html.LabelFor(m => m.Customer.BirthDate, new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:dd-MM-yyyy}", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Customer.BirthDate, "", new { style = "color:#e60000" })
+    <br />
+    @Html.LabelFor(m => m.Customer.MembershipTypeId, new { @class = "control-label" })
+    @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId, "", new { style = "color:#e60000" })
+    <br />
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter, new { type = "checkbox" }) Subscribed to Newsletter?
+            @Html.ValidationMessageFor(m => m.Customer.IsSubscribedToNewsletter, "", new { style = "color:#e60000" })
+        </label>
+    </div>
+    <br />
+    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-success" name="command" value="submit">Submit</button>
+    <button type="submit" class="btn btn-primary" name="command" value="cancel">Cancel</button>
+    <button type="submit" class="btn btn-danger" name="command" value="delete">Delete</button>
+</div>
+}

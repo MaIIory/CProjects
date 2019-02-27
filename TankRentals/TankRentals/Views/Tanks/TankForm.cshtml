@@ -1,0 +1,40 @@
+﻿@model TankRentals.ViewModels.NewTankViewModel
+
+@{
+    ViewData["Title"] = "TankForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.FormName</h2>
+
+@using (Html.BeginForm("Save", "Tanks", new { @class = "form-horizontal" }))
+{
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Tank.Model, new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Tank.Model, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Tank.Model, "", new { style = "color:#e60000" })
+    <br />
+    @Html.LabelFor(m => m.Tank.ReleaseDate, new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Tank.ReleaseDate, "{0:dd-MM-yyyy}", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Tank.ReleaseDate, "", new { style = "color:#e60000" })
+    <br />
+    @Html.LabelFor(m => m.Tank.NumberInGarage, new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Tank.NumberInGarage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Tank.NumberInGarage, "", new { style = "color:#e60000" })
+    <br />
+    @Html.LabelFor(m => m.Tank.TankTypeId, new { @class = "control-label" })
+    @Html.DropDownListFor(m => m.Tank.TankTypeId, new SelectList(Model.TankType, "Id", "Name"), "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Tank.TankTypeId, "", new { style = "color:#e60000" })
+    <br />
+    @Html.HiddenFor(m => m.Tank.Id)
+    @Html.HiddenFor(m => m.FormName)
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-success" name="command" value="submit">Submit</button>
+    <button type="submit" class="btn btn-primary" name="command" value="cancel">Cancel</button>
+    <button type="submit" class="btn btn-danger" name="command" value="delete">Delete</button>
+</div>
+        }
+
+

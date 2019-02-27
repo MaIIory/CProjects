@@ -9,13 +9,23 @@ namespace TankRentals.Models
     public class Customer
     {
         public int Id { get; set; }
-        //Data annotations
+
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        public DateTime? BirthDate { get; set; }
+
+        [Required]
+        [Display(Name="Date of Birth")]
+        [Min18YearsOld]
+        public DateTime BirthDate { get; set; }
+
+        [Required]
         public bool IsSubscribedToNewsletter { get; set; }
+
         public MembershipType MembershipType { get; set; }
-        public int MembershipTypeId;
+
+        [Required]
+        [Display(Name = "Membership Type")]
+        public int MembershipTypeId { get; set; }
     }
 }

@@ -5,6 +5,10 @@
 }
 
 <h2>Customers Table</h2>
+
+@Html.ActionLink("Add Customer", "New", "Customers", new { }, new { @class = "btn btn-default" })
+<br />
+<br />
 @{
     if (Model.Count == 0)
     {
@@ -12,27 +16,69 @@
     }
     else
     {
-        <table class="table table-striped table-hover ">
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Birth Date</th>
-                <th>Membership</th>
-            </tr>
-            @foreach (var customer in Model)
-            {
+        <table id="customers" class="table table-striped table-hover">
+            <thead>
                 <tr>
-                    <th>@customer.Id</th>
-                    <th><a asp-area="" asp-controller="Customers" asp-action="Details" asp-route-id="@customer.Id">@customer.Name</a></th>
-                    <th>
-                        @if (customer.BirthDate != null)
-                        {
-                            <text>@customer.BirthDate.Value.Date.ToShortDateString()</text>
-                        }
-                    </th>
-                    <th>@customer.MembershipType.Name</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Birth Date</th>
+                    <th>Membership</th>
+                    <th>Delete</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var customer in Model)
+                {
+                    <tr>
+                        <td>@customer.Id</td>
+                        <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id })</td>
+                        <td>
+                            @if (customer.BirthDate != null)
+                            {
+                                <text>@customer.BirthDate.Date.ToShortDateString()</text>
+                            }
+                        </td>
+                        <td>@customer.MembershipType.Name</td>
+                        <td><button data-customer-id="@customer.Id" class="btn btn-primary js-delete">Delete</button></td>
+
+                    </tr>
+                }
+            </tbody>
         </table>
+    }
+
+
+    @section Scripts
+        {
+
+
+        @*DataTables imports adapted for bootstrap styling*@
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css" />
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>
+
+        <script>
+
+            $(document).ready(function () {
+
+                //enable DataTable framework at 'customers' table - just one line of code!
+                var table = $('#customers').DataTable(); 
+
+                $("#customers").on("click", ".js-delete", function () {
+                    var button = $(this);
+
+                    if (confirm("Are you sure you want to delete this customer?")) {
+
+                        $.ajax({
+                            url: "/api/customers/" + button.attr("data-customer-id"),
+                            method: "DELETE",
+                            success: function () {
+                                //button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw()
+                            }
+                        })
+                    }
+                })
+            });
+        </script>
     }
 }

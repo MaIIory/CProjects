@@ -2553,7 +2553,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 40%;
   height: 38px;
   padding: 8px 12px;
   font-size: 14px;

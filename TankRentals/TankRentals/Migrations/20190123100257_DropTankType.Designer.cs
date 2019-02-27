@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TankRentals.Models;
 
 namespace TankRentals.Migrations
 {
     [DbContext(typeof(TanksContext))]
-    partial class TanksContextModelSnapshot : ModelSnapshot
+    [Migration("20190123100257_DropTankType")]
+    partial class DropTankType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +27,7 @@ namespace TankRentals.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("BirthDate");
+                    b.Property<DateTime?>("BirthDate");
 
                     b.Property<bool>("IsSubscribedToNewsletter");
 
@@ -69,36 +71,15 @@ namespace TankRentals.Migrations
 
                     b.Property<DateTime>("DateAdded");
 
-                    b.Property<int>("HorsePowers");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasMaxLength(15);
+                    b.Property<string>("Model");
 
                     b.Property<short>("NumberInGarage");
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<int>("TankTypeId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TankTypeId");
 
                     b.ToTable("Tanks");
-                });
-
-            modelBuilder.Entity("TankRentals.Models.TankType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TankType");
                 });
 
             modelBuilder.Entity("TankRentals.Models.Customer", b =>
@@ -106,14 +87,6 @@ namespace TankRentals.Migrations
                     b.HasOne("TankRentals.Models.MembershipType", "MembershipType")
                         .WithMany()
                         .HasForeignKey("MembershipTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("TankRentals.Models.Tank", b =>
-                {
-                    b.HasOne("TankRentals.Models.TankType", "TankType")
-                        .WithMany()
-                        .HasForeignKey("TankTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

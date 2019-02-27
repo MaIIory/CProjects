@@ -9,5 +9,7 @@ namespace TankRentals.Models
 
         public DbSet<Tank> Tanks { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+        public DbSet<TankType> TankType { get; set; }
     }
 }

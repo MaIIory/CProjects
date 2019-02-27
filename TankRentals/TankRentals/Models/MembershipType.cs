@@ -7,5 +7,8 @@
         public float DiscountLevel { get; set; }
         public bool Contract { get; set; }
         public int ContractDurationInMonths { get; set; }
+
+        public static int Platinum = 4;
+        public static int Mithril = 5;
     }
 }
